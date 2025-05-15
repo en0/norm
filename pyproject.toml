@@ -1,0 +1,56 @@
+[project]
+name = "not-an-orm"
+version = "0.1.0"
+description = "An implementation of the Generic Repository."
+homepage = "https://github.com/en0/not_an_orm"
+license = { file = "LICENSE" }
+authors = [{name = "Ian Laird",email = "irlaird@gmail.com"}]
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = []
+
+[tool.poetry]
+packages = [{include = "core", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"
+pytest-mock = "^3.14.0"
+pytest-watch = "^4.2"
+pre-commit = "^4.2.0"
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-x --ff"
+testpaths = ["tests"]
+pythonpath = ["src", "tests"]
+
+[tool.pyright]
+#reportAny = false
+#reportExplicitAny = false
+#reportUnknownLambdaType = false
+
+[tool.isort]
+multi_line_output = 3
+line_length = 100
+include_trailing_comma = true
+
+[tool.black]
+line_length = 100
+
+[tool.flake8]
+# Give just a bit of wiggle room
+max-line-length = 110
+exclude = [
+    "__pycache__",
+    "tests/**"]
+
+[tool.mypy]
+strict = true
+ignore_missing_imports = true
+disallow_untyped_decorators = true
+exclude = ['tests/']
