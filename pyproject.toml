@@ -1,5 +1,5 @@
 [project]
-name = "not-an-orm"
+name = "norm"
 version = "0.1.0"
 description = "An implementation of the Generic Repository."
 homepage = "https://github.com/en0/not_an_orm"
